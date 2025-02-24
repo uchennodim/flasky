@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"> 
+      <link rel="stylesheet" href="../static/style2.css">  
+      <title>INDEX 2</title>
+    </head>
+    <body>
+      <h1>INDEX 2</h1>
+      {{ my_title }} is my title! <!-- the jinja templating will evaluate m_title rom its correponding vale in the python script that is serving this html document-->
+      {{nick_name}} is all about the {{cash_flow}} dollar cash flow #{{my_title}} #{{no_definition}} webewinning <!--if a jinja template brace variable, like no_definition isnt defined in the python script's corresponding endpoint function that is serving this html,the server/jinja just ignores it in the html as if it were a blank empty string-->
+      <script src="../static/script.js"></script>
+      <!-- scripts are usu at the bottom of the body element except when they are modules which are placed in the head element   -->
+    </body>
+</html>

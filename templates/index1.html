@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <!-- <link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}"> -->
+       <!-- The shortcut link type is often seen before icon, but this link type is non-conforming, ignored and web authors must not use it anymore. https://www.sitepoint.com/community/t/whats-the-difference-between-shortcut-icon-and-just-icon/330324 -->
+      <link rel="icon" href="{{ url_for('static', filename='favicon.ico') }}"> <!--the double curly brackets is jinja templating syntax which F lask incoporates such that anywhere it is in the html doc, lask evalates the expression within the closed double curly brackets as python code > in this case the unction url_for is being called with the arguments 'static' and filename='favicon.ico' url_for() is a Flask function used to generate a URL to the given endpoint. In other words, in Python, per the Jinja double curlys, url_for('static', filename='favicon.ico') will evaluate to which is the url of the favicon.ico file in the static folder. https://flask.palletsprojects.com/en/stable/api/#flask.url_for -->
+      <link rel="stylesheet" href="../static/style.css">
+      <!--  -->
+      <!-- <link rel="shortcut icon" href="../static/favicon.ico"> --> 
+      <!-- above works -->
+      <!-- <title>testing python email</title>  -->
+      <!-- originally had above title for email testing, now using same js script or testing web server -->
+      <title>Python Web Server</title>
+    </head>
+    <body>
+        {{ 2 + 2 }} <!-- this is a jinja2 template variable, denoted by the double curly braces and thus computes as if it were python code. It is like saying to Flask to evalate whats between the double curly brackets as python code and sending the reslts to the browseer to display! In other words this is displayed as 4 in the browser and not as the string "2 + 2 " NOTE: when i put the doouble closed cuurly brackets in this comment, Flask threw an error: jinja2.exceptions.TemplateSyntaxError: Expected an expression, got 'end of print statement' i.e. Jinja will still check in the double closed curly brackets even if its commented out! thats why it was expecting an expression between the bracets even thogh it wont be evaluated in the browser because, comment! This Jinja sef tooo dey jinja! Wawu!!-->
+        <!-- {{"jinja2" + "deyJinja"}} this didnt throw an errror bt did when I removed the "jinja2" + "deyJinja" -->    
+        You just became $name
+        <script src="../static/script.js"></script>
+        <!-- scripts are usu at the bottom of the body element except when they are modules which are placed in the head element   -->
+    </body>
+</html>
